@@ -10,4 +10,11 @@ describe("actions", () => {
 
     assert.deepEqual(actual, expected);
   });
+
+  it("valueChange should create VALUE_CHANGE action", () => {
+    const actual = actionCreators.valueChange(1, 2, 3);
+    const expected = { type: types.VALUE_CHANGE, row: 1, col: 2, value: 3 };
+
+    assert.deepEqual(actual, expected);
+  });
 });

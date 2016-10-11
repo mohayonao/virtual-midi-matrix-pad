@@ -22,7 +22,6 @@ let state = store.getState();
 const midiDevice = new MIDIDevice(DEVICE_NAME, actions);
 
 app.on("window-all-closed", () => {
-  actions.allNoteOff();
   if (process.platform !== "darwin") {
     app.quit();
   }

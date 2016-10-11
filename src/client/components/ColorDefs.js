@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import Color from "color";
-
-const ColorMap = [
-  "#000000",
-];
+import ColorMap from "launch-pad-color";
 
 export default class ColorDefs extends Component {
   shouldComponentUpdate() {

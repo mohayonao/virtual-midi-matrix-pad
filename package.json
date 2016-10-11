@@ -1,7 +1,7 @@
 {
   "name": "@mohayonao/virtual-launch-pad",
   "description": "Electron-based LaunchPad Simulator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Nao Yonamine <mohayonao@gmail.com>",
   "bugs": {
     "url": "https://github.com/mohayonao/virtual-launch-pad/issues"
@@ -17,6 +17,8 @@
     "express": "^4.14.0",
     "ip": "^1.1.3",
     "is-electron": "^2.0.0",
+    "launch-pad-color": "^0.5.0",
+    "lodash.frompairs": "^4.0.1",
     "midi": "^0.9.5",
     "nmap": "^0.9.0",
     "react": "^15.3.2",

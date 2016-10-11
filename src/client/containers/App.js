@@ -2,11 +2,14 @@ import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
 import ColorDefs from "../components/ColorDefs";
 import Panel from "../components/Panel";
+import LPadMatrix from "../components/LPadMatrix";
+import PadFocus from "../components/PadFocus";
 import { WIDTH, HEIGHT } from "../designer";
+import { keyDown, keyUp } from "./KeyHandler";
 
 class App extends Component {
   static propTypes = {
-    actions : PropTypes.objectOf(PropTypes.func).isRequired,
+    actions: PropTypes.objectOf(PropTypes.func).isRequired,
   };
 
   constructor(...args) {
@@ -19,6 +22,7 @@ class App extends Component {
     this.onTouchEnd = ::this.onTouchEnd;
     this.onKeyDown = ::this.onKeyDown;
     this.onKeyUp = ::this.onKeyUp;
+    this.onValueChange = ::this.onValueChange;
   }
 
   componentDidMount() {
@@ -49,10 +53,16 @@ class App extends Component {
     e.preventDefault();
   }
 
-  onKeyDown(/* e */) {
+  onKeyDown(e) {
+    keyDown(e.keyCode, this.props);
   }
 
-  onKeyUp(/* e */) {
+  onKeyUp(e) {
+    keyUp(e.keyCode, this.props);
+  }
+
+  onValueChange(row, col, value) {
+    this.props.actions.valueChange(row, col, value);
   }
 
   render() {
@@ -76,6 +86,8 @@ class App extends Component {
       <svg className="app" style={ style } viewBox={ `0 0 ${ WIDTH } ${ HEIGHT }` }>
         <ColorDefs />
         <Panel />
+        <LPadMatrix { ...this.props } onValueChange={ this.onValueChange }/>
+        <PadFocus { ...this.props }/>
       </svg>
     );
   }
