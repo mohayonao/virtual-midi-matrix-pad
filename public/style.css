@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #000000;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  font-family: "Helvetica";
+  user-select: none;
+  -webkit-user-select: none;
+  background: #3a3934;
+}
