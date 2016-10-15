@@ -1,6 +1,6 @@
 import "run-with-mocha";
 import assert from "assert";
-import clone from "lodash.clonedeep";
+import clone from "clone";
 import * as appActionCreators from "../../../src/app/actions";
 import reducer from "../../../src/app/reducer";
 
