@@ -11,6 +11,13 @@ describe("actions", () => {
     assert.deepEqual(actual, expected);
   });
 
+  it("applyPatch should create APPLY_PATCH", () => {
+    const actual = actionCreators.applyPatch([ { op: "add" } ]);
+    const expected = { type: types.APPLY_PATCH, patch: [ { op: "add" } ] };
+
+    assert.deepEqual(actual, expected);
+  });
+
   it("valueChange should create VALUE_CHANGE action", () => {
     const actual = actionCreators.valueChange(1, 2, 3);
     const expected = { type: types.VALUE_CHANGE, row: 1, col: 2, value: 3 };
