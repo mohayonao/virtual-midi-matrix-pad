@@ -1,14 +1,14 @@
-# Virtual Launch Pad
+# Virtual MIDI Matrix Pad
 
-Electron-based [Novation LaunchPad](https://us.novationmusic.com/launch/launchpad) Simulator
+Electron-based Virtual MIDI Controller that like [Novation Launchpad](https://us.novationmusic.com/launch/launchpad)
 
 ![screen shot](./assets/screenshot.png)
 
 ## Installation
 
 ```
-$ git clone https://github.com/mohayonao/virtual-launch-pad.git
-$ cd virtual-launch-pad
+$ git clone https://github.com/mohayonao/virtual-midi-matrix-pad.git
+$ cd virtual-midi-matrix-pad
 $ npm install
 ```
 
