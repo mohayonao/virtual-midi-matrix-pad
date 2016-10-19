@@ -1,7 +1,7 @@
 {
   "name": "@mohayonao/virtual-launch-pad",
   "description": "Electron-based LaunchPad Simulator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Nao Yonamine <mohayonao@gmail.com>",
   "bugs": {
     "url": "https://github.com/mohayonao/virtual-launch-pad/issues"
