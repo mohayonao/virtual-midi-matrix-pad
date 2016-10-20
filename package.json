@@ -1,7 +1,7 @@
 {
   "name": "@mohayonao/virtual-midi-matrix-pad",
   "description": "Electron-based Virtual MIDI Controller",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "Nao Yonamine <mohayonao@gmail.com>",
   "bugs": {
     "url": "https://github.com/mohayonao/virtual-midi-matrix-pad/issues"
