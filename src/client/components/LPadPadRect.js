@@ -1,7 +1,3 @@
 import LEDPadRect from "./ui/LEDPadRect";
 
-export default class LPadPadRect extends LEDPadRect {
-  constructor(props) {
-    super(props, { size: 84 });
-  }
-}
+export default LEDPadRect({ size: 84 });
