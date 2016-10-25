@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React, { Component, PropTypes } from "react";
 import VolatileSurface from "./ui/VolatileSurface";
 import { toCX, toCY } from "../designer";
 import KeyTemplate, { MatrixKeys } from "../designer/KeyTemplate";
@@ -14,7 +14,8 @@ const FontParams = {
   dominantBaseline: "middle",
 };
 
-export default class HintSurface extends VolatileSurface {
+@VolatileSurface(1000)
+export default class HintSurface extends Component {
   static propTypes = {
     keyTemplate: PropTypes.number.isRequired,
     selectKeyTemplateTime: PropTypes.number.isRequired,
@@ -24,7 +25,7 @@ export default class HintSurface extends VolatileSurface {
     return nextProps.selectKeyTemplateTime !== this.props.selectKeyTemplateTime;
   }
 
-  renderChild() {
+  render() {
     const template = KeyTemplate[this.props.keyTemplate];
     const elems = MatrixKeys.map((ch, i) => {
       const cx = toCX(template[i][1]) - 84 * 0.4;
@@ -36,6 +37,6 @@ export default class HintSurface extends VolatileSurface {
       ];
     });
 
-    return elems;
+    return (<g>{ elems }</g>);
   }
 }
