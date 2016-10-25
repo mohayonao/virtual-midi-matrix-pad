@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
 import LEDColorDefs from "../components/ui/LEDColorDefs";
 import FrontPanel from "../components/FrontPanel";
+import HintSurface from "../components/HintSurface";
 import LPadMatrix from "../components/LPadMatrix";
-import PadFocus from "../components/PadFocus";
 import { WIDTH, HEIGHT, LEDColorMap } from "../designer";
 import { keyDown, keyUp } from "./KeyHandler";
 
@@ -87,7 +87,7 @@ class App extends Component {
         <LEDColorDefs colors={ LEDColorMap }/>
         <FrontPanel />
         <LPadMatrix { ...this.props } onValueChange={ this.onValueChange }/>
-        <PadFocus { ...this.props }/>
+        <HintSurface { ...this.props }/>
       </svg>
     );
   }

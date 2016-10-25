@@ -15,7 +15,7 @@ const FontParams = {
   dominantBaseline: "middle",
 };
 
-export default class PadFocus extends VolatileSurface {
+export default class HintSurface extends VolatileSurface {
   static propTypes = {
     keyTemplate: PropTypes.number.isRequired,
     selectKeyTemplateTime: PropTypes.number.isRequired,
