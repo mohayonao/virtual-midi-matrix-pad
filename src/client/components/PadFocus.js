@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from "react";
+import React, { PropTypes } from "react";
+import VolatileSurface from "./ui/VolatileSurface";
 import { LPadPadRect } from "./LPadPad";
 import { toCX, toCY } from "../designer";
 import KeyTemplate, { MatrixKeys } from "../designer/KeyTemplate";
@@ -14,41 +15,17 @@ const FontParams = {
   dominantBaseline: "middle",
 };
 
-export default class PadFocus extends Component {
+export default class PadFocus extends VolatileSurface {
   static propTypes = {
     keyTemplate: PropTypes.number.isRequired,
     selectKeyTemplateTime: PropTypes.number.isRequired,
   };
 
-  constructor(...args) {
-    super(...args);
-
-    this.state = { visible: false };
-    this._timerId = 0;
+  shouldComponentUpdate(nextProps) {
+    return nextProps.selectKeyTemplateTime !== this.props.selectKeyTemplateTime;
   }
 
-  componentWillReceiveProps(nextProp) {
-    if (nextProp.selectKeyTemplateTime !== this.props.selectKeyTemplateTime) {
-      this.setState({ visible: true });
-      clearTimeout(this._timerId);
-      this._timerId = setTimeout(() => {
-        this.setState({ visible: false });
-      }, 1000);
-    }
-  }
-
-  shouldComponentUpdate(nextProp, nextState) {
-    return (
-      nextProp.selectKeyTemplateTime !== this.props.selectKeyTemplateTime ||
-      nextState.visible !== this.state.visible
-    );
-  }
-
-  render() {
-    if (!this.state.visible) {
-      return null;
-    }
-
+  renderChild() {
     const template = KeyTemplate[this.props.keyTemplate];
     const elems = MatrixKeys.map((ch, i) => {
       const cx = toCX(template[i][1]) - LPadPadRect.Size * 0.4;
@@ -60,6 +37,6 @@ export default class PadFocus extends Component {
       ];
     });
 
-    return (<g>{ elems }</g>);
+    return elems;
   }
 }
