@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from "react";
-import VolatileSurface from "./ui/VolatileSurface";
+import Volatile from "./ui/Volatile";
 import { toCX, toCY } from "../designer";
 import KeyTemplate, { MatrixKeys } from "../designer/KeyTemplate";
 
@@ -14,7 +14,7 @@ const FontParams = {
   dominantBaseline: "middle",
 };
 
-@VolatileSurface(1000)
+@Volatile({ timeout: 1000 })
 export default class HintSurface extends Component {
   static propTypes = {
     keyTemplate: PropTypes.number.isRequired,
