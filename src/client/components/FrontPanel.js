@@ -3,7 +3,6 @@ import Panel from "./ui/Panel";
 import { NUMBER_OF_COLS } from "../../common/constants";
 import { toCX, toCY } from "../designer";
 import { PadLayout, PadCaptions } from "../designer";
-import { LPadPadOval } from "./LPadPad";
 
 export default class FacePanel extends Panel {
   static defaultProps = { render };
@@ -24,7 +23,7 @@ function render() {
 
       elems.push(
         <g key={ key }>
-          <circle cx={ cx } cy={ cy } r={ LPadPadOval.Size } fill="#050504"/>
+          <circle cx={ cx } cy={ cy } r={ 30 } fill="#050504"/>
           <text x={ cx } y={ cy } fill="#f0f0f0" textAnchor="middle" dominantBaseline="middle">
             { caption }
           </text>

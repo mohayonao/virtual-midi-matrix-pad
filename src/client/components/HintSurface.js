@@ -1,6 +1,5 @@
 import React, { PropTypes } from "react";
 import VolatileSurface from "./ui/VolatileSurface";
-import { LPadPadRect } from "./LPadPad";
 import { toCX, toCY } from "../designer";
 import KeyTemplate, { MatrixKeys } from "../designer/KeyTemplate";
 
@@ -28,8 +27,8 @@ export default class HintSurface extends VolatileSurface {
   renderChild() {
     const template = KeyTemplate[this.props.keyTemplate];
     const elems = MatrixKeys.map((ch, i) => {
-      const cx = toCX(template[i][1]) - LPadPadRect.Size * 0.4;
-      const cy = toCY(template[i][0]) - LPadPadRect.Size * 0.4;
+      const cx = toCX(template[i][1]) - 84 * 0.4;
+      const cy = toCY(template[i][0]) - 84 * 0.4;
 
       return [
         <circle key={ i } cx={ cx } cy={ cy } { ...CircleParams }/>,

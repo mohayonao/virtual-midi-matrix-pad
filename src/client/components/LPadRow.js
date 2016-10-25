@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from "react";
-import { LPadPadRect, LPadPadOval } from "./LPadPad";
+import LPadPadRect from "./LPadPadRect";
+import LPadPadOval from "./LPadPadOval";
 import { toCX, toCY, PadLayout } from "../designer";
 
 export default class LPadRow extends Component {
