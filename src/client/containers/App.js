@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
-import ColorDefs from "../components/ColorDefs";
+import LEDColorDefs from "../components/ui/LEDColorDefs";
 import Panel from "../components/Panel";
 import LPadMatrix from "../components/LPadMatrix";
 import PadFocus from "../components/PadFocus";
-import { WIDTH, HEIGHT } from "../designer";
+import { WIDTH, HEIGHT, LEDColorMap } from "../designer";
 import { keyDown, keyUp } from "./KeyHandler";
 
 class App extends Component {
@@ -84,7 +84,7 @@ class App extends Component {
 
     return (
       <svg className="app" style={ style } viewBox={ `0 0 ${ WIDTH } ${ HEIGHT }` }>
-        <ColorDefs />
+        <LEDColorDefs colors={ LEDColorMap }/>
         <Panel />
         <LPadMatrix { ...this.props } onValueChange={ this.onValueChange }/>
         <PadFocus { ...this.props }/>

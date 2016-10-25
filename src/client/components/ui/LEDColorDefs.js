@@ -1,14 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from "react";
 import Color from "color";
-import ColorMap from "launch-pad-color";
 
-export default class ColorDefs extends Component {
+export default class LEDColorDefs extends Component {
+  static propTypes = {
+    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  };
+
   shouldComponentUpdate() {
     return false;
   }
 
   render() {
-    const elems = ColorMap.map((color, i) => {
+    const elems = this.props.colors.map((color, i) => {
       const id = `led${ i }`;
       const color1 = Color(color).mix(Color("#fafaf9")).darken(0.25).hexString();
       const color2 = i !== 0 ? Color(color1).lighten(0.5).hexString() : color1;
