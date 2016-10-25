@@ -1,3 +1,3 @@
-import LEDPadRect from "./ui/LEDPadRect";
+import LEDPad from "./ui/LEDPad";
 
-export default LEDPadRect({ size: 84 });
+export default LEDPad("rect", { size: 84 });

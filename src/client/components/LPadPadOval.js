@@ -1,3 +1,3 @@
-import LEDPadRing from "./ui/LEDPadRing";
+import LEDPad from "./ui/LEDPad";
 
-export default LEDPadRing({ size: 60 });
+export default LEDPad("ring", { size: 60 });
