@@ -8,7 +8,7 @@ const CircleParams = {
   r: 20,
 };
 
-const FomrParams = {
+const FontParams = {
   fill: "#b5a2a2",
   textAnchor: "middle",
   dominantBaseline: "middle",
@@ -56,7 +56,7 @@ export default class PadFocus extends Component {
 
       return [
         <circle key={ i } cx={ cx } cy={ cy } { ...CircleParams }/>,
-        <text key={ i + 100 } x={ cx } y={ cy } { ...FomrParams }>{ ch }</text>,
+        <text key={ i + 100 } x={ cx } y={ cy } { ...FontParams }>{ ch }</text>,
       ];
     });
 
